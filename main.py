@@ -23,7 +23,6 @@ huyaunter = 0
 with open('links.txt') as links:
     links = links.readlines()
     links = [link.strip() for link in links]
-    print(links)
 for link in links:
     json_data = {
         'url': link,
@@ -36,7 +35,6 @@ for link in links:
         if item.get("resolution") == "audio only" and item.get("ext") == "m4a":
             latest_url.append(item["url"])  # Overwrites with the latest match
     main_url = str(latest_url[-1])        
-    print(main_url)
     session = requests.Session()
 
     session.headers.update({
@@ -52,4 +50,4 @@ for link in links:
                 file.write(chunk)
     else:
         huyaunter +=1
-
+    print(f'sucsessfuli saved: {counter}, fucked up: {huyaunter}')
