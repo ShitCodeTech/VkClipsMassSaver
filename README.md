@@ -10,6 +10,6 @@
 
 `pip install -r requirements.txt`
 
-*plase your links in links.txt*
+*plaсe your links in links.txt*
 
 `python3 main.py`
